@@ -1,0 +1,620 @@
+--- PÁGINA 1 ---
+All-Purpose Laser Sensor
+LR-TB2000 Series
+Instruction Manual (Excerpt)
+Read this manual before using the product in order to achieve maximum performance.
+Keep this manual in a safe place after reading it so that it can be used at any time.
+The following symbols alert you to important messages. Be sure to read these
+messages carefully.
+1Introduction
+Safety Information for LR-TB Series
+Safety Precautions on Laser Product
+This product uses a semiconductor laser as its light source.
+* The laser classification for FDA (CDRH) is implemented based on IEC60825-1 in 
+accordance with the requirements of Laser Notice.
+ Laser warning and explanation labels
+ Laser warning and explanation labels
+• Attached to the cable
+• Included with the product
+* For a Class 2 laser product, select from the warning and explanation labels included 
+in the package the appropriate warning and explanation label according to the 
+country and region where the Class 2 laser product will be used. Then, affix the 
+warning and explanation label over top of the existing warning and explanation label 
+on the product.
+Mesures de sécurité concernant les instruments laser
+Cet instrument utilise un laser à semi-conducteur pour la source lumineuse.
+* La classification laser pour la FDA (CDRH) des États-Unis est basée sur la norme 
+CEI60825-1, conformément aux exigences du document Laser Notice relatif aux 
+lasers.
+It indicates a hazardous situation which, if not avoided, will result in 
+death or serious injury.
+It indicates a hazardous situation which, if not avoided, could result in 
+death or serious injury.
+It indicates a situation which, if not avoided, could result in product 
+damage as well as property damage.
+• This product is only intended to detect object(s). Do not use this product 
+for the purpose to protect a human body or part of a human body.
+• This product is not intended for use as an explosion-proof product. Do 
+not use this product in a hazardous location and/or potentially explosive 
+atmosphere.
+This product uses DC power. The product may explode or burn if an 
+AC voltage is applied.
+• Do not wire the cable along with power lines or high-tension lines, as the 
+sensor may malfunction or be damaged due to noise.
+• When using a commercially available switching regulator, ground the 
+frame ground terminal and ground terminal.
+• Do not use this product outdoors or in a location in which its light-
+receiving surface will come in direct contact with stray ambient light.
+• Use of controls or adjustments or performance of procedures other than 
+those specified herein may result in hazardous radiation exposure.
+• Follow the instructions mentioned in this manual. Otherwise, injury to 
+the human body (eyes and skin) may result.
+• Laser emission from this product is not automatically stopped when it is 
+disassembled. Do not disassemble this product.
+• Precautions on Class 2 Laser Product
+– Do not stare into the direct or specularly reflected beam.
+– Do not direct the beam at people or into areas where people might be 
+present.
+– Be careful of the path of the laser beam.
+If there is a possibility that the operator may be exposed to the 
+specular or diffuse reflections, block the beam by installing a 
+protective enclosure.
+– Install this product so that the path of the laser beam is not as the 
+same height as that of human eye.
+• Precautions on Class 1 Laser Product
+– Do not stare into the direct or specularly reflected beam.
+Item Description
+Model LR-TB2000 LR-TB2000CL
+LR-TB2000C
+Wavelength 660 nm
+Pulse width 4.3 ns
+FDA(CDRH)
+Part1040.10
+Laser class* Class 2 laser product Class 1 laser product
+Output 1.0 mW 390 μW
+JIS C 6802/
+IEC 60825-1
+Laser class Class 2 laser product Class 1 laser product
+Output 1.0 mW 390 μW
+96M19042
+Documentation for the detailed setting methods and functions 
+of the LR-TB2000 Series can be downloaded from the 
+following URL.
+www.keyence.com/support_LR-TB2000
+DANGER
+WARNING
+NOTICE
+DANGER
+WARNING
+NOTICE
+WARNING
+• L'utilisation de commandes, de réglages ou de procédures autres que 
+ceux spécifiés dans le présent document peut entraîner un risque 
+d'exposition à des rayonnements.
+• Suivez les instructions figurant dans ce manuel. Leur non-respect peut 
+entraîner des blessures corporelles (oculaires et cutanées).
+• L'émission du faisceau laser de cet instrument ne s'arrête pas 
+automatiquement lorsqu'on le démonte. Ne démontez pas l'instrument.
+• Précautions concernant les instruments laser de classe 2
+– Ne pas regarder le faisceau direct ni le faisceau spéculaire réfléchi.
+– Ne pas diriger le faisceau vers des personnes ou des zones dans 
+lesquelles des personnes pourraient se trouver.
+– Prenez garde au faisceau laser.
+En cas de risque d’exposition à des rayons spéculaires ou diffus 
+pour l’opérateur, bloquer le faisceau en installant un boitier de 
+protection.
+– Installez l'instrument de manière à ce que le faisceau laser ne soit pas 
+à la hauteur des yeux.
+• Précautions concernant les instruments laser de classe 1
+– Ne pas regarder le faisceau direct ni le faisceau spéculaire réfléchi.
+Elément Description
+Modèle LR-TB2000 LR-TB2000CL
+LR-TB2000C
+Longueur d'onde 660 nm
+Largeur des impulsions 4,3 ns
+FDA 
+(CDRH)
+Part1040.10
+Classe du 
+laser*
+Appareil à laser de 
+Classe 2
+Appareil à laser de 
+Classe 1
+Sortie 1,0 mW 390 μW
+JIS C 6802/
+CEI 60825-1
+Classe de 
+laser
+Appareil à laser de 
+Classe 2
+Appareil à laser de 
+Classe 1
+Sortie 1,0 mW 390 μW
+1567 12 34
+XX-XXXX DI SP
+MODE
+1
+2
+Laser emission 
+point 
+Laser warning and explanation 
+label
+Class 2 (English) Class 1
+Class 2 (included with the product in each language)
+AVERTISSEMENT
+ Étiquettes d'avertissement et d'explications pour laser
+ Étiquettes d'avertissement et d'explications pour laser
+• Fixée sur le câble
+• Inclus avec le produit
+* Pour l'appareil laser de Classe 2, choisir parmi les étiquettes d'avertissement et 
+d'explication contenues dans le paquet, l'étiquette d'avertissement et d'explication 
+correspondant au pays et à la région dans lesquels l'appareil laser de Classe 2 sera 
+utilisé. Apposer ensuite l'étiquette d'avertissement et d'explication par-dessus 
+l'étiquette d'avertissement et d'explication figurant sur l'appareil.
+[KEYENCE CANADA INC.
+6775 Financial Dr., Suite 400, Mississauga, ON. L5N 0A4, Canada]
+Precautions on Regulations and Standards
+ CSA Certificate
+LR-TB series complies with the following CSA and UL standards and has been certified 
+by CSA (Class 2252 06 / Class 2252 86). 
+• Applicable standard: CAN/CSA C22.2 No.61010-1
+UL61010-1
+• Use the following power supply.
+CSA/UL certified power supply that provides Class 2 output as defined in the CEC 
+(Canadian Electrical Code) and NEC (National Electrical Code), or CSA/UL certified 
+power supply that has been evaluated as a Limited Power Source as defined in CAN/ 
+CSA-C22.2 No. 60950-1/UL60950-1
+• Use this product at the altitude of 2000 m or less.
+• Use this product at the level of overvoltage category I.
+• Use this product at pollution degree 3.
+• Indoor use only.
+ CE and UKCA Marking
+Keyence Corporation has confirmed that this product complies with the essential 
+requirements of the applicable EU Directive(s) and UK regulations, based on the 
+following specifications. Be sure to consider the following specifications when using 
+this product in the Member States of European Union and in the United Kingdom.
+ EMC Directive (CE) and Electromagnetic Compatibility 
+Regulations (UKCA) 
+• Applicable standard: (BS)EN60947-5-2, Class A
+Remarks: These specifications do not give any guarantee that the end product with this 
+product incorporated complies with the essential requirements of EMC Directive and 
+Electromagnetic Compatibility Regulations. The manufacturer of the end-product is 
+solely responsible for the compliance on the end-product itself according to EMC 
+Directive and Electromagnetic Compatibility Regulations.
+Package Contents
+• Main unit
+• Instruction manual
+• Laser warning and explanation labels (LR-TB2000/TB2000C only)
+Specifications
+*1 The range for displayable distance is from 50 to 2200.
+*2 The laser classification for FDA (CDRH) is implemented based on IEC60825-1 in 
+accordance with the requirements of Laser Notice.
+*3 145mA or less (with load)
+*4 You can select the I/O from the following combinations.
+Control output × 2, control output + external input
+*5 IO-Link specification v.1.1/COM2 (38.4 kbps) is supported.
+You can download a setup file from the KEYENCE website (http://www.keyence.com). 
+If you are using the product in an environment in which you cannot download files 
+over the Internet, contact your nearest KEYENCE office.
+1567 12 34
+XX-XXXX DI SP
+MODE
+1
+2
+Point d'émission 
+laser 
+Étiquette d'avertissement et 
+d'explications pour laser
+Classe 2 (anglais) Classe 1
+Classe 2 (inclus avec le produit dans chaque langue)
+Model
+Cable LR-TB2000 -
+Cable with 
+connector M12 LR-TB2000C LR-TB2000CL
+Detectable distance*1 60 to 2000 mm
+Spot diameter Approx. 4 mm
+Response time 1 ms/10 ms/25 ms/
+100 ms/1000 ms
+selectable
+2 ms/20 ms/50 ms/
+200 ms/2000 ms
+selectable
+Light 
+source
+Type Red laser (660 nm)
+Laser class Class 2 laser product
+IEC60825-1,FDA(CDRH)
+Part1040.10*2
+Class 1 laser product
+IEC60825-1,FDA(CDRH)
+Part1040.10*2
+Mutual interference 
+prevention function
+4 units (when using the interference prevention 
+function)
+Timer OFF/OFF delay/ON delay/One-shot
+Power voltage 20 to 30 VDC, including 10% ripple (P-P), Class 2 or 
+LPS
+Current consumption 45 mA or less (without load)*3
+I/O*4*5 Control output NPN open collector/PNP open collector selectable
+30 VDC or less, 50 mA or less, 
+residual voltage: 2 V or less, N.O./N.C. selectable
+External input Transmission OFF / Tuning / 
+Reference surface update selectable
+Short-circuit current: 1 mA or less for both NPN 
+and PNP
+For the applied voltage, see the wiring diagrams 
+( " 2-2. Wiring").
+For the input times, see the time charts 
+( "3 Initial Settings").
+Protection circuit Protection against reverse power connection, 
+power supply surges, output overcurrent, output 
+surge, and reverse output connection
+Environ
+mental 
+resista
+nce
+Enclosure rating IP65/IP67 (IEC60529)
+Ambient light Incandescent lamp/Sunlight: 100000 lux or less
+Ambient 
+temperature
+-20 to +55°C (no freezing)
+Ambient 
+humidity
+35 to 85%RH (no condensation)
+Shock 
+resistance
+1000m/s2 in X, Y, Z axis directions respectively 6 times
+Vibration 
+resistance
+10 to 55 Hz Double amplitude 1.5 mm in the X, Y, Z 
+axis directions respectively, 2 hours
+Material Case: Zinc die cast (Nickel chrome plating), Indicator 
+cover and buttons: PES, Lens cover and display: 
+PMMA (scratch-resistant coating specifications), 
+Cable bushing: PBT, Cable: PVC, 
+M12 connector (only for the cable with connector M12 
+type): TPE, PBT, Nickel-plated brass
+Weight Cable type: Approx. 125 g (Including cable)
+Cable with connector M12 type: Approx. 85 g
+E1 E2
+
+--- PÁGINA 2 ---
+Documentation for the detailed setting methods and functions 
+of the LR-TB2000 Series can be downloaded from the 
+following URL.
+www.keyence.com/support_LR-TB2000
+ÎåÚØÞĖcations are subject to change without notice.
+KEYENCE CORPORATION
+1-3-14, Higashi-Nakajima, Higashi-Yodogawa-ku, 
+Osaka, 533-8555, Japan 
+PHONE: +81-6-6379-2211 
+A4SWW1-MAN-2095
+Copyright (c) 2026 KEYENCE CORPORATION. All rights reserved.
+19042GB 2056-1 96M19042 Printed in Japan
+www.keyence.com/glb
+AUSTRIA
++43 (0)2236 378266 0
+BELGIUM
++32 (0)15 281 222
+BRAZIL
++55-11-3045-4011
+CANADA
++1-905-366-7655
+CHINA
++86-21-3357-1001
+CZECH REPUBLIC
++420 220 184 700
+FRANCE
++33 1 56 37 78 00
+GERMANY
++49-69-65400-0
+HONG KONG
++852-3104-1010
+HUNGARY
++36 1 802 7360
+INDIA
++91-44-4963-0900
+INDONESIA
++62-21-2966-0120
+ITALY
++39-02-6688220
+KOREA
++82-31-789-4300
+MALAYSIA
++60-3-7883-2211
+MEXICO
++52-55-8850-0100
+NETHERLANDS
++31 (0)40 206 6100
+PHILIPPINES
++63-(0)2-8981-5000
+POLAND
++48 71 368 61 60
+ROMANIA
++40 (0)269 232 808
+SINGAPORE
++65-6392-1011
+SLOVAKIA
++421 (0)2 5939 6461
+SLOVENIA
++386 (0)1 4701 666
+SWITZERLAND
++41 (0)43 455 77 30
+TAIWAN
++886-2-2721-1080
+THAILAND
++66-2-078-1090
+UK & IRELAND
++44 (0)1908-696-900
+USA 
++1-201-930-0100
+VIETNAM
++84-24-3772-5555
+Part Functions
+2 Installation and Wiring
+2-1. Installation
+• Tightening torque for the mounting holes: 0.63 N·m (M3 screw)
+• If the detecting object has a mirrored surface, install the sensor in a position where 
+specular reflection will not penetrate the optical receiver.
+2-2. Wiring
+With the LR-TB Series, you can select the functions of the I/O wires (black and white) 
+from the combinations shown below during the initial settings. "3 Initial Settings"
+Independently isolate any I/O wires that you will not use.
+ Out1+Out2
+ NPN  PNP
+ Input+Out1
+ NPN  PNP
+3 Initial Settings
+When you turn on the LR-TB Series for the first time after you purchase it or when you 
+have initialized the LR-TB Series, the following initial settings must be configured.
+• After you have finished configuring the initial settings, you will not be able to 
+reconfigure the unit, I/O, or NPN/PNP selection. To change any of these settings, you 
+will have to initialize the product. "5-2. Initialization".
+ Setting
+For details on setting output 2, see "4-2. Switching Out1/Out2".
+ 2-point calibration
+4 Basic Settings
+4-1. Manual Tuning
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+Indicator
+Output 1 ON : Orange*
+Output 1 OFF : Green*
+Error : Flashing red
+* The indicator flashes when two 
+conditions below are met;
+• Stability output turns ON.
+• Output 1 turns OFF when output 
+logic is N.O. or turns ON when 
+output logic is N.C.
+[SET] Button
+The operation of this button varies 
+depending on the detection mode.
+Example: 2-point calibration
+1. Press this button with no 
+workpiece present.
+2. Press this button with a 
+workpiece present.
+[DISP/] Button
+ Pressed for 1 second or less: 
+Changes the setting value 
+( "4-2. Switching Out1/Out2")
+ Held for 3 seconds or more: 
+Switches to the display screen
+[MODE/] Button
+ Pressed for 1 second or less: 
+Changes the setting value 
+( "4-2. Switching Out1/
+Out2")
+ Held for 3 seconds or more: 
+Switches to the setting screen
+Load (input device)
+1, brown
+4, black
+2, white
+3, blue
+20 ... 30 V
+0 V
+1, brown
+4, black
+2, white
+3, blue
+20 ... 30 V
+0 V
+1, brown
+4, black
+2, white
+3, blue
+20 ... 30 V
+0 V
+1, brown
+4, black
+2, white
+3, blue
+20 ... 30 V
+0 V
+Start Config.
+Select I/O
+Select Input
+Select Output
+End Config.
+RUN
+NPN NPN
+PNP
+Laser Off
+Laser Off
+Tuning
+DATUM Preset
+Out1+Out2 Out1+Out2
+Input+Out1
+Input+Out1
+1234
+500
+1
+2
+Out1+Out2
+I/O Selection
+External Input Selection
+NPN/PNP
+Selection
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+1 2
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+Press the set button for 1 second or less.
+Press the set button for 1 second or less.
+RUN
+3 seconds
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+1...99991567 1234
+1
+2
+1567
+1234
+1
+2
+Press the [DISP/] or the [MODE/] button 
+(for 1 second or less).
+4-2. Switching Out1/Out2
+The initial [Out2] mode is [Stability].
+When [Out2] mode is set to [Standard] or [Window], the setting below could be 
+manipulated.
+5 Useful Functions
+5-1. Key Lock
+To require a password to release the key lock.
+5-2. Initialization
+Initialization resets the product to its factory default settings. After initialization, you will 
+have to configure the "3 Initial Settings".
+ Using the shortcut keys to execute the initialization
+WARRANTIES AND DISCLAIMERS
+(1) KEYENCE warrants the Products to be free of defects in materials and workmanship for a 
+period of one (1) year from the date of shipment. If any models or samples were shown to 
+Buyer, such models or samples were used merely to illustrate the general type and quality of 
+the Products and not to represent that the Products would necessarily conform to said 
+models or samples. Any Products found to be defective must be shipped to KEYENCE with 
+all shipping costs paid by Buyer or offered to KEYENCE for inspection and examination. 
+Upon examination by KEYENCE, KEYENCE, at its sole option, will refund the purchase price 
+of, or repair or replace at no charge any Products found to be defective. This warranty does 
+not apply to any defects resulting from any action of Buyer, including but not limited to 
+improper installation, improper interfacing, improper repair, unauthorized modification, 
+misapplication and mishandling, such as exposure to excessive current, heat, coldness, 
+moisture, vibration or outdoors air. Components which wear are not warranted.
+(2) KEYENCE is pleased to offer suggestions on the use of its various Products. They are only 
+suggestions, and it is Buyer's responsibility to ascertain the fitness of the Products for Buyer’s 
+intended use. KEYENCE will not be responsible for any damages that may result from the use 
+of the Products.
+(3) The Products and any samples ("Products/Samples") supplied to Buyer are not to be used 
+internally in humans, for human transportation, as safety devices or fail-safe systems, unless 
+their written specifications state otherwise. Should any Products/Samples be used in such a 
+manner or misused in any way, KEYENCE assumes no responsibility, and additionally Buyer 
+will indemnify KEYENCE and hold KEYENCE harmless from any liability or damage 
+whatsoever arising out of any misuse of the Products/Samples.
+(4) OTHER THAN AS STATED HEREIN, THE PRODUCTS/SAMPLES ARE PROVIDED WITH 
+NO OTHER WARRANTIES WHATSOEVER. ALL EXPRESS, IMPLIED, AND STATUTORY 
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-
+INFRINGEMENT OF PROPRIETARY RIGHTS, ARE EXPRESSLY DISCLAIMED.
+IN NO EVENT SHALL KEYENCE AND ITS AFFILIATED ENTITIES BE LIABLE TO ANY 
+PERSON OR ENTITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL 
+OR CONSEQUENTIAL DAMAGES (INCLUDING, WITHOUT LIMITATION, ANY DAMAGES 
+RESULTING FROM LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF 
+INFORMATION, LOSS OR INACCURACY OF DATA, LOSS OF PROFITS, LOSS OF 
+SAVINGS, THE COST OF PROCUREMENT OF SUBSTITUTED GOODS, SERVICES OR 
+TECHNOLOGIES, OR FOR ANY MATTER ARISING OUT OF OR IN CONNECTION WITH 
+THE USE OR INABILITY TO USE THE PRODUCTS, EVEN IF KEYENCE OR ONE OF ITS 
+AFFILIATED ENTITIES WAS ADVISED OF A POSSIBLE THIRD PARTY’S CLAIM FOR 
+DAMAGES OR ANY OTHER CLAIM AGAINST BUYER. In some jurisdictions, some of the 
+foregoing warranty disclaimers or damage limitations may not apply.
+BUYER'S TRANSFER OBLIGATIONS:
+If the Products/Samples purchased by Buyer are to be resold or delivered to a third party, 
+Buyer must provide such third party with a copy of this document, all specifications, manuals, 
+catalogs, leaflets and written information provided to Buyer pertaining to the Products/
+Samples.
+E 1101-3
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+1567
+1234
+1
+2
+Out2 1456S
+Out1 1234 Out1 1234
+Out2 1456S
+1567
+1456
+1
+2
+1567
+1456
+1
+2
+RUN
+3 seconds
+1567
+1234
+1
+2
+RUN
+3 seconds
+Press the [DISP/] or the [MODE/] button 
+(for 1 second or less).
+An arrow will be displayed next to the setting value to be changed when 
+tuning or calibration is implemented.
+9999Input Password
+0000
+0000 ...
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+Press these buttons at the same time for 
+3 seconds or more.
+If necessary, enter the password to 
+release the lock.
+Lock Unlock
+"3 Initial Settings"
+1567
+1234
+XX-XXXX
+DISP MODE
+1
+2
+Initialize ?
+No
+Initialize ?
+Yes
+While pressing the [MODE/] button, 
+press the [SET] button five times.
+E3 E4
