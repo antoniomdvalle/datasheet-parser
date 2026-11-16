@@ -1,67 +1,81 @@
 import threading
 import tkinter as tk
-from tkinter import messagebox, scrolledtext
+from tkinter import scrolledtext
 from pathlib import Path
-from llama_index.core import Settings, StorageContext, load_index_from_storage
+from llama_index.core import Settings, StorageContext, load_index_from_storage, PromptTemplate
 from llama_index.llms.ollama import Ollama
 from llama_index.embeddings.ollama import OllamaEmbedding
 
 # ==========================================
-# 1. CONFIGURAÇÕES DO RAG / OLLAMA
+# 1. CONFIGURAÇÕES OTIMIZADAS PARA VELOCIDADE
 # ==========================================
 OLLAMA_URL = "http://localhost:11434"
 PERSIST_DIR = "./storage"
 
+# LLM leve (qwen2.5:1.5b ~980MB) com limite de 150 tokens na resposta
 Settings.llm = Ollama(
-    model="qwen2.5-coder:7b",
+    model="qwen2.5:1.5b",
     base_url=OLLAMA_URL,
-    temperature=0.1,
-    request_timeout=180.0,
-    context_window=32768
+    temperature=0.0,
+    request_timeout=60.0,
+    context_window=4096,
+    additional_kwargs={"num_predict": 150}
 )
 
+# Embedding ultrarrápido (45MB)
 Settings.embed_model = OllamaEmbedding(
-    model_name="nomic-embed-text",
+    model_name="all-minilm",
     base_url=OLLAMA_URL
 )
 
+# System Prompt rígido para respostas diretas em 1 ou 2 frases
+QA_PROMPT_TMPL = (
+    "You are a fast, objective technical assistant for laser sensors. "
+    "Answer the question objectively in 1 or 2 sentences using ONLY the provided manual context below. "
+    "Do not add extra explanations or filler words. If the answer is not in the context, say 'Information not found in the manual.'\n"
+    "---------------------\n"
+    "{context_str}\n"
+    "---------------------\n"
+    "Question: {query_str}\n"
+    "Answer: "
+)
+QA_PROMPT = PromptTemplate(QA_PROMPT_TMPL)
+
 # ==========================================
-# 2. INTERFACE GRÁFICA (TKINTER)
+# 2. INTERFACE GRÁFICA (TKINTER COM STREAMING)
 # ==========================================
 class SensorSupportApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Laser Sensor Support - AI")
+        self.root.title("Laser Sensor Support - Fast AI (1.5B)")
         self.root.geometry("680x540")
-        self.root.configure(bg="#F4F7FA")  # Fundo claro suave
+        self.root.configure(bg="#F4F7FA")
         self.root.resizable(True, True)
 
         self.query_engine = None
         self.criar_widgets()
 
-        # Carrega o índice em segundo plano para a janela abrir na hora
         threading.Thread(target=self.carregar_indice, daemon=True).start()
 
     def criar_widgets(self):
-        # --- Cabeçalho Azul ---
+        # Cabeçalho Azul
         header = tk.Frame(self.root, bg="#1E56A0", height=60)
         header.pack(fill=tk.X)
         header.pack_propagate(False)
 
         lbl_titulo = tk.Label(
             header,
-            text="Laser Sensor Support - AI",
+            text="Laser Sensor Support - Fast Search",
             font=("Segoe UI", 14, "bold"),
             bg="#1E56A0",
             fg="#FFFFFF"
         )
         lbl_titulo.pack(pady=15, padx=20, anchor="w")
 
-        # --- Área Principal ---
+        # Área Principal
         container = tk.Frame(self.root, bg="#F4F7FA", padx=20, pady=15)
         container.pack(fill=tk.BOTH, expand=True)
 
-        # Label do Prompt
         lbl_pergunta = tk.Label(
             container,
             text="Sua pergunta (em inglês):",
@@ -71,7 +85,6 @@ class SensorSupportApp:
         )
         lbl_pergunta.pack(anchor="w", pady=(0, 5))
 
-        # Caixa de Entrada do Prompt + Botão Enviar
         frame_input = tk.Frame(container, bg="#F4F7FA")
         frame_input.pack(fill=tk.X, pady=(0, 15))
 
@@ -98,12 +111,11 @@ class SensorSupportApp:
             cursor="hand2",
             padx=20,
             pady=6,
-            state=tk.DISABLED,  # Habilita assim que o índice terminar de carregar
+            state=tk.DISABLED,
             command=self.enviar_pergunta
         )
         self.btn_enviar.pack(side=tk.RIGHT)
 
-        # Label da Resposta
         lbl_resposta = tk.Label(
             container,
             text="Resposta:",
@@ -113,7 +125,6 @@ class SensorSupportApp:
         )
         lbl_resposta.pack(anchor="w", pady=(0, 5))
 
-        # Caixa de Texto da Resposta
         self.txt_resposta = scrolledtext.ScrolledText(
             container,
             font=("Segoe UI", 11),
@@ -127,7 +138,6 @@ class SensorSupportApp:
         )
         self.txt_resposta.pack(fill=tk.BOTH, expand=True, pady=(0, 12))
 
-        # --- Rodapé com Status e Botão Copiar ---
         frame_footer = tk.Frame(container, bg="#F4F7FA")
         frame_footer.pack(fill=tk.X)
 
@@ -159,14 +169,17 @@ class SensorSupportApp:
     def carregar_indice(self):
         try:
             if not Path(PERSIST_DIR).exists():
-                self.atualizar_status("Erro: pasta ./storage não encontrada.")
+                self.atualizar_status("Erro: pasta ./storage não encontrada. Rode 2_criar_indice.py.")
                 return
 
             storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
             index = load_index_from_storage(storage_context)
+
+            # top_k reduzido para 3 e streaming ativado
             self.query_engine = index.as_query_engine(
-                similarity_top_k=4,
-                response_mode="compact"
+                similarity_top_k=3,
+                text_qa_template=QA_PROMPT,
+                streaming=True
             )
             self.root.after(0, self.ao_carregar_indice)
         except Exception as e:
@@ -174,7 +187,7 @@ class SensorSupportApp:
 
     def ao_carregar_indice(self):
         self.btn_enviar.config(state=tk.NORMAL)
-        self.lbl_status.config(text="Pronto para consultas.")
+        self.lbl_status.config(text="Pronto (Qwen 1.5B + MiniLM).")
         self.entry_prompt.focus()
 
     def enviar_pergunta(self):
@@ -182,32 +195,42 @@ class SensorSupportApp:
         if not pergunta or not self.query_engine:
             return
 
-        # Bloqueia o botão enquanto o Ollama gera a resposta
         self.btn_enviar.config(state=tk.DISABLED)
-        self.lbl_status.config(text="Consultando o manual...")
-        self.definir_texto_resposta("Processando sua pergunta, aguarde...")
+        self.lbl_status.config(text="Gerando resposta...")
+        self.limpar_texto_resposta()
 
-        # Roda a consulta em uma Thread separada para a tela não travar ("Não respondendo")
-        threading.Thread(target=self.processar_consulta, args=(pergunta,), daemon=True).start()
+        threading.Thread(target=self.processar_consulta_stream, args=(pergunta,), daemon=True).start()
 
-    def processar_consulta(self, pergunta):
+    def processar_consulta_stream(self, pergunta):
         try:
-            response = self.query_engine.query(pergunta)
-            texto_final = str(response).strip()
-            self.root.after(0, lambda: self.exibir_resultado(texto_final, "Consulta concluída."))
+            streaming_response = self.query_engine.query(pergunta)
+            for token in streaming_response.response_gen:
+                self.root.after(0, lambda t=token: self.adicionar_token_resposta(t))
+
+            self.root.after(0, self.finalizar_consulta)
         except Exception as e:
-            self.root.after(0, lambda: self.exibir_resultado(f"Erro: {e}", "Falha na consulta."))
+            self.root.after(0, lambda: self.exibir_erro(f"Erro: {e}"))
 
-    def exibir_resultado(self, texto, status):
-        self.definir_texto_resposta(texto)
-        self.lbl_status.config(text=status)
-        self.btn_enviar.config(state=tk.NORMAL)
-
-    def definir_texto_resposta(self, texto):
+    def limpar_texto_resposta(self):
         self.txt_resposta.config(state=tk.NORMAL)
         self.txt_resposta.delete("1.0", tk.END)
-        self.txt_resposta.insert(tk.END, texto)
         self.txt_resposta.config(state=tk.DISABLED)
+
+    def adicionar_token_resposta(self, token):
+        self.txt_resposta.config(state=tk.NORMAL)
+        self.txt_resposta.insert(tk.END, token)
+        self.txt_resposta.see(tk.END)
+        self.txt_resposta.config(state=tk.DISABLED)
+
+    def finalizar_consulta(self):
+        self.lbl_status.config(text="Consulta concluída.")
+        self.btn_enviar.config(state=tk.NORMAL)
+
+    def exibir_erro(self, msg):
+        self.limpar_texto_resposta()
+        self.adicionar_token_resposta(msg)
+        self.lbl_status.config(text="Falha na consulta.")
+        self.btn_enviar.config(state=tk.NORMAL)
 
     def atualizar_status(self, msg):
         self.root.after(0, lambda: self.lbl_status.config(text=msg))
@@ -219,9 +242,8 @@ class SensorSupportApp:
 
         self.root.clipboard_clear()
         self.root.clipboard_append(texto)
-        self.root.update()  # Mantém na área de transferência do Windows
+        self.root.update()
 
-        # Feedback visual rápido no botão
         self.btn_copiar.config(text="Copiado!", bg="#2E8B57", fg="#FFFFFF")
         self.root.after(1500, lambda: self.btn_copiar.config(
             text="Copiar Resposta", bg="#D6E4F0", fg="#163172"
